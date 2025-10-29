@@ -1,0 +1,50 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-10-29 14:01:56.650046",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "disable_print_limit",
+  "max_print_doc"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "disable_print_limit",
+   "fieldtype": "Check",
+   "label": "Disable"
+  },
+  {
+   "fieldname": "max_print_doc",
+   "fieldtype": "Table",
+   "label": "Max Print Document",
+   "options": "Max Print Document"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-10-29 16:48:06.670182",
+ "modified_by": "Administrator",
+ "module": "Print Permission",
+ "name": "Print Limit Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

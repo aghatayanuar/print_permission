@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-10-29 14:13:11.046715",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "ref_doctype",
+  "ref_name",
+  "printed_by",
+  "print_time"
+ ],
+ "fields": [
+  {
+   "fieldname": "ref_doctype",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reference Doctype",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ref_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reference Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "printed_by",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Printed By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "print_time",
+   "fieldtype": "Datetime",
+   "label": "Print Time",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-10-29 16:47:43.610557",
+ "modified_by": "Administrator",
+ "module": "Print Permission",
+ "name": "Print Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
