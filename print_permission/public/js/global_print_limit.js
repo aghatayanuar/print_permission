@@ -1,3 +1,7 @@
+
+// Memeriksa izin cetak setiap kali user membuka route print/ (ini untuk tombol print seperti di SO dll)
+// dikembalikan ke lastroute jika sudah limit
+
 (() => {
     if (window._patched_print_guard_final) return;
     window._patched_print_guard_final = true;

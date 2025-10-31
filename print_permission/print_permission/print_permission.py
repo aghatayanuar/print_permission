@@ -5,8 +5,10 @@ from frappe.www import printview
 original_get_html_and_style = printview.get_html_and_style
 
 def before_print_check(doc, print_format=None, style=None, as_pdf=False, check_only=False):
+    
     settings = frappe.get_single("Print Limit Settings")
 
+    #Cek Print Limit Apakah Di disable
     if getattr(settings, "disable_print_limit", 0):
         return
 
@@ -14,6 +16,7 @@ def before_print_check(doc, print_format=None, style=None, as_pdf=False, check_o
     doctype = doc.doctype
     name = doc.name
 
+    #Ambil Nilai Max Print Per Document
     rule = next((d for d in settings.max_print_doc if d.document == doctype), None)
     if not rule or not rule.limit_per_doc:
         return
@@ -25,11 +28,13 @@ def before_print_check(doc, print_format=None, style=None, as_pdf=False, check_o
         filters={"ref_doctype": doctype, "ref_name": name}
     )
 
+    #Throw Jika Melebihi Limit
     if printed_count >= limit:
         frappe.throw(
             _("Print limit reached for {0} {1}. Allowed: {2}").format(doctype, name, limit)
         )
 
+    #Jika Tidak Cek Only Simpan Di Print Log 
     if not check_only:
         frappe.get_doc({
             "doctype": "Print Log",
