@@ -16,6 +16,13 @@ def before_print_check(doc, print_format=None, style=None, as_pdf=False, check_o
     doctype = doc.doctype
     name = doc.name
 
+    # ====== CEK ROLE EXCEPTION ======
+    user_roles = frappe.get_roles(user)
+    exception_roles = [d.user_role for d in settings.user_role_exception]
+    
+    if set(user_roles).intersection(set(exception_roles)):
+        return
+
     #Ambil Nilai Max Print Per Document
     rule = next((d for d in settings.max_print_doc if d.document == doctype), None)
     if not rule or not rule.limit_per_doc:
